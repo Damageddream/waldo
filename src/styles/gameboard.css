@@ -1,0 +1,21 @@
+.crash {
+    width: 70px;
+    height: 100px;
+    border: 1px solid red;
+    position: absolute;
+
+}
+.vash {
+    width: 70px;
+    height: 100px;
+    border: 1px solid red;
+    position: absolute;
+    top: 25px;
+    right:595px;
+}
+.marvin {
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    position: absolute;
+}

@@ -1,0 +1,18 @@
+:root{ 
+   --background: #f9f4ef;
+   --bigText: #020826;
+   --mainText: #716040;
+   --elements: #8c7851;
+   --onElements: #fffffe;
+   --border: #020826;
+   --primary:#fffffe;
+   --secondary:#eaddcf;
+   --teriary:#f25042;
+
+}
+
+body, html {
+    margin: 0;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}

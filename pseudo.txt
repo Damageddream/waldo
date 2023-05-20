@@ -1,0 +1,37 @@
+Homepage: 
+
+Rules
+Start game button
+
+-> 
+
+game:
+
+Image whole page
+divs with position absolute and no styling on chaacters to guess
+
+
+Select character to guess:
+
+div with list of all characters:
+    select char - -> if char === div with char
+    slice char from array
+
+div timer
+    starts with start game
+    stops when correct guess
+
+div - end game -> 
+    congrats message - time
+    all times list 
+    back to homepage / try again
+
+utilities 
+ - check if character(pass id?div?):
+    return true false
+- message - Sorry, try again
+          - Yes! its' char!
+- check if win
+     - after every guess if array of chars empty - win
+- win - congrats, your time ....
+
