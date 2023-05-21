@@ -3,4 +3,6 @@
     top: 0;
     z-index: 2;
     background-color: white;
+    text-align: center;
+    font-size: 40px;
 }
