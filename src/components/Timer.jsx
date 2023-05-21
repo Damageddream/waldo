@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import '../styles/timer.css'
 
 const Timer = () => {
   const [time, setTime] = useState(null);
@@ -11,7 +12,7 @@ const Timer = () => {
     setTime(Date.now() - passed);
   }, 10);
   return (
-    <div>
+    <div className="timer">
       <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
       <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}</span>
     </div>
