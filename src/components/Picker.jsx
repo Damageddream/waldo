@@ -21,11 +21,11 @@ const Picker = ({ x, y, target, guessHandler, time }) => {
 
   const navigate = useNavigate()
 
-
+ 
   useEffect(()=>{
     if(chars.length === 0){
       guessHandler({ show: false, guess: null })
-      navigate('/end', {state: 'asd'})
+      navigate('/end', {state: time})
     }
   },[chars])
 

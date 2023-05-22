@@ -10,7 +10,7 @@ const Timer = (props) => {
   }, []);
   setInterval(() => {
     setTime(Date.now() - passed);
-    props.time(time)
+    props.passTime(time)
   }, 10);
   return (
     <div className="timer">
