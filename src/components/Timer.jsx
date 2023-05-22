@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import '../styles/timer.css'
 
-const Timer = () => {
+const Timer = (props) => {
   const [time, setTime] = useState(null);
   const [passed, setPassed] = useState(null);
 
@@ -10,6 +10,7 @@ const Timer = () => {
   }, []);
   setInterval(() => {
     setTime(Date.now() - passed);
+    props.time(time)
   }, 10);
   return (
     <div className="timer">

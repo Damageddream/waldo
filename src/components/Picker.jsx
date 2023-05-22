@@ -1,29 +1,51 @@
 import { useState, useEffect } from "react";
+import crash from '../images/crashFpng.png';
+import vash from '../images/vashF.png';
+import marvin from '../images/marvinF.png'
+import '../styles/picker.css'
+import { useNavigate } from "react-router-dom";
 
-const Picker = ({ x, y, target }) => {
+
+
+const Picker = ({ x, y, target, guessHandler, time }) => {
   const pickerStyle = {
     position: "absolute",
     left: x,
     top: y,
     backgroundColor: "white",
+    zIndex: 3,
   };
 
+  const [chars, setChars] = useState([{name: 'vash', src:vash}, {name: 'crash', src:crash}, {name:'marvin', src:marvin}])
   const [show, setShow] = useState(false);
+
+  const navigate = useNavigate()
+
+
+  useEffect(()=>{
+    if(chars.length === 0){
+      guessHandler({ show: false, guess: null })
+      navigate('/end', {state: 'asd'})
+    }
+  },[chars])
 
   useEffect(() => {
     if (x) {
       setShow(true);
+      guessHandler({ show: false, guess: null })
+      
     }
   }, [x]);
 
   // check if guess is correct and return inforamtion based on result
   const quessChecker = (e) => {
     const guess = e.target.innerText.toLowerCase()
-    if(guess === target){
-        console.log('win')
+    if (guess === target) {
+      guessHandler({ show: true, guess: true })
+      setChars(chars => chars.filter(char=>char.name !== guess))
     }
-    else{
-        console.log('try again')
+    else {
+      guessHandler({ show: true, guess: false })
     }
     setShow(false)
   }
@@ -32,15 +54,13 @@ const Picker = ({ x, y, target }) => {
   return (
     show && (
       <div className="picker" style={pickerStyle}>
-        <div onClick={quessChecker} className="vashPick pick">
-          <div className="name">Vash</div>
-        </div>
-        <div onClick={quessChecker} className="crashPick pick">
-          <div className="name">Crash</div>
-        </div>
-        <div onClick={quessChecker} className="marvinPick pick">
-          <div className="name">Marvin</div>
-        </div>
+        {chars.map((char) => (
+          <div onClick={quessChecker} className={`${char.name}Pick pick`} key={char.name}>
+            <div className="name">{char.name.toUpperCase()}</div>
+            <img className="face" src={char.src} alt={char.name} />
+
+          </div>
+        ))}
       </div>
     )
   );
