@@ -11,7 +11,7 @@ const xVash = 1273
 const yVash = 91
 const xCrash = 348
 const yCrash = 387
-const xMarvin = 1494
+const xMarvin = 1494 
 const yMarvin = 830
 const target1 = 'vash'
 const target2 = 'crash'
@@ -52,6 +52,20 @@ it('check if clicking not on character works', async ()=>{
     )
     const vash = screen.getByText(/vash/i)
     await user.click(vash)
-    expect(guessHandler).toHaveBeenCalledTimes(1)
+    expect(guessHandler).toHaveBeenCalledTimes(2)
     expect(guessHandler).toHaveBeenCalledWith({show: false, guess:null})
+})
+
+it('check if clicking not on vash', async ()=>{
+    const user = userEvent.setup()
+    render(
+        <BrowserRouter>
+            <Picker x={xVash} y={yVash} target={'vash'} guessHandler={guessHandler} />
+        </BrowserRouter>
+    )
+    const vash = screen.getByAltText('vash') 
+    await user.click(vash)
+    expect(guessHandler).toHaveBeenCalledTimes(2)
+    expect(guessHandler).toHaveBeenCalledWith({show: true, guess:true})
+    expect(vash).not.toBeInTheDocument()
 })

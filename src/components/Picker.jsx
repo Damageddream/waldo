@@ -37,8 +37,8 @@ const Picker = ({ x, y, target, guessHandler, time }) => {
 
   // check if guess is correct and return inforamtion based on result
   const quessChecker = (e) => {
-    console.log(x,y)
-    const guestarg = e.target.innerText.toLowerCase()
+    
+    const guestarg = e.target.innerText
     let guess;
     if(guestarg){
       guess = e.target.innerText.toLowerCase()
