@@ -11,7 +11,7 @@
     position: absolute;
     left: 330px;
     top: 415px;
-    z-index: 2;
+    z-index: 3;
 
 }
 .vash {
@@ -20,7 +20,7 @@
     position: absolute;
     top: 10px;
     right:610px;
-    z-index: 2;
+    z-index: 3;
 }
 .marvin {
     width: 60px;
@@ -28,6 +28,6 @@
     position: absolute;
     bottom: 280px;
     right: 390px;
-    z-index: 2;
+    z-index: 3;
     
 }

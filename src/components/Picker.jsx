@@ -5,15 +5,13 @@ import marvin from '../images/marvinF.png'
 import '../styles/picker.css'
 import { useNavigate } from "react-router-dom";
 
-
-
 const Picker = ({ x, y, target, guessHandler, time }) => {
   const pickerStyle = {
     position: "absolute",
     left: x,
     top: y,
     backgroundColor: "white",
-    zIndex: 3,
+    zIndex: 5,
   };
 
   const [chars, setChars] = useState([{name: 'vash', src:vash}, {name: 'crash', src:crash}, {name:'marvin', src:marvin}])
@@ -39,8 +37,15 @@ const Picker = ({ x, y, target, guessHandler, time }) => {
 
   // check if guess is correct and return inforamtion based on result
   const quessChecker = (e) => {
-    const guess = e.target.innerText.toLowerCase()
-    if (guess === target) {
+    console.log(x,y)
+    const guestarg = e.target.innerText.toLowerCase()
+    let guess;
+    if(guestarg){
+      guess = e.target.innerText.toLowerCase()
+    }else{
+      guess = e.target.alt
+    }
+    if (guess === target ) {
       guessHandler({ show: true, guess: true })
       setChars(chars => chars.filter(char=>char.name !== guess))
     }
