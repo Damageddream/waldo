@@ -29,12 +29,6 @@ const Leaderboard = ({ db, addedTime }) => {
         setSortedTimes(sorted)
     }, [times])
 
-    // useEffect(() => {
-    //     if (addedTime) {
-    //         fetchPost();
-    //     }
-    // }, [addedTime])
-
     let num = 1;
 
     return (<div className="leader">
