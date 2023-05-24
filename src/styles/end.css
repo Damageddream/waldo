@@ -1,0 +1,52 @@
+.end{
+    display: grid;
+    grid-template-rows: 15% 15% 1fr;
+    gap: 20px
+}
+
+
+
+.youTime {
+    font-size: 64px;
+    place-self: center;
+    grid-row: 1/2;
+
+}
+
+span {
+    color: #f25042;
+    font-weight: bolder;
+
+}
+
+form{
+    place-self: center;
+    grid-row: 2/3;
+}
+
+input {
+    border: none;
+    width: 150px;
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    color: #716040;
+    margin: 10px;
+}
+
+input:focus{
+    outline: 2px solid #020826;
+  
+}
+
+.submit {
+    height: 40px;
+    font-size: 14px;
+    width: 50px;
+}
+label {
+    font-weight: 600;
+}

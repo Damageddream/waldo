@@ -1,6 +1,7 @@
 import { getDocs, collection } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { timeFormater } from "./Utilities";
+import '../styles/leaderboard.css'
 
 
 const Leaderboard = ({ db, addedTime }) => {
@@ -34,7 +35,7 @@ const Leaderboard = ({ db, addedTime }) => {
     return (<div className="leader">
         <div className="leadTitle">Leaderboard: </div>
         {sortedTimes.map((time) => (
-            <div key={time.id}>
+            <div key={time.id} className="singleTime">
                 <div>{num++}.</div>
                 <div>{time.name}</div>
                 <div>{timeFormater(time.time).time}</div>

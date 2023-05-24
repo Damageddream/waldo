@@ -4,6 +4,7 @@ import { useState } from "react";
 import { initializeApp, } from "firebase/app";
 import { getFirestore, addDoc, collection } from "firebase/firestore"
 import Leaderboard from "./Leaderboard";
+import '../styles/end.css'
 
 const firebaseConfig = {
     apiKey: "AIzaSyByoySIq6gganFiKev-3jQiSufBA5W6UZk",
@@ -39,12 +40,12 @@ const End = () => {
         setShowForm(false)
     }
 
-    return (<div>
-        <div>Your time is {timeFormat.time}</div>
+    return (<div className="end">
+        <div className="youTime">Your time is <span>{timeFormat.time}</span></div>
         {showForm && <form onSubmit={submitHandler}>
-            <label htmlFor="name">Add your name</label>
+            <label htmlFor="name">Add your name:</label>
             <input value={name} onChange={inputHandler} id='name' type="text" />
-            <button type="submit btn">Add</button>
+            <button type="submit" className="submit btn">Add</button>
         </form>}
 
         <Leaderboard db={db} updateTimes={setTimes} addedTime={showForm} />

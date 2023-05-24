@@ -1,0 +1,27 @@
+.leader {
+    place-self: center;
+    background-color: #fffffe;
+    border: 2px solid #020826;
+    width: 900px;
+    border-radius: 4px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-row: 3/4;
+}
+
+.leadTitle {
+    color: #020826;
+    font-size: 64px;
+    text-align: center;
+}
+.singleTime {
+    display: flex;
+    font-weight: 600;
+    gap: 10px;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 300px;
+}

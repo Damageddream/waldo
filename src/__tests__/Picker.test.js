@@ -5,17 +5,10 @@ import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 
 //mock props
-const x = 782
-const y = 281
+
 const xVash = 1273
 const yVash = 91
-const xCrash = 348
-const yCrash = 387
-const xMarvin = 1494 
-const yMarvin = 830
-const target1 = 'vash'
-const target2 = 'crash'
-const target3 = 'marvin'
+
 const guessHandler = jest.fn()
 
 it('check if all elements render', () => {

@@ -3,6 +3,7 @@
     position: relative;
     top: 50px;
     z-index: 1;
+    cursor: url('../images/target.svg')50 50, auto;
 }
 
 .crash {
